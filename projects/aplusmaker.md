@@ -7,13 +7,59 @@ toc: true
 toc_sticky: true
 toc_label: "목차"
 ---
+<div class="custom-toc">
+* TOC
+{:toc}
+</div>
 
 <style>
 /* =========================
    읽기 편한 포폴 타이포 세팅
    (내용은 그대로, 보이기만 개선)
    ========================= */
+.custom-toc {
+  position: fixed;
+  top: 140px;
+  right: 60px;
+  width: 260px;
+  max-height: 70vh;
+  overflow-y: auto;
+  padding: 18px 20px;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.04);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
 
+/* 제목 숨기기 (원하면 유지 가능) */
+.custom-toc > p:first-child {
+  display: none;
+}
+
+/* 링크 스타일 */
+.custom-toc a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.custom-toc a:hover {
+  color: #3b82f6;
+}
+
+/* 중첩 레벨 들여쓰기 */
+.custom-toc ul {
+  padding-left: 14px;
+}
+
+/* 모바일에서는 숨김 */
+@media (max-width: 1200px) {
+  .custom-toc {
+    display: none;
+  }
+}
+.custom-toc li {
+  margin-bottom: 6px;
+}
 .page__content,
 .page-content,
 .page__inner-wrap,
