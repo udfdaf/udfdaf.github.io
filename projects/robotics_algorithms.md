@@ -7,7 +7,7 @@ image: /assets/img/projects/robotics/robotics-thumb.jpg
 
 <div class="custom-toc" markdown="1">
 * TOC
-{:toc: .toc__menu}
+{:toc}
 </div>
 
 <style>
@@ -841,3 +841,5 @@ Cliff Walking이 재미있었던 이유는, “같은 환경”인데도
 결국 이번 과제에서 남은 한 줄은 이거였다.
 
 **강화학습은 ‘정답 경로’를 외우는 게 아니라, 업데이트 방식이 곧 위험을 정의한다.**
+
+---
