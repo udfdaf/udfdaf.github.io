@@ -777,10 +777,7 @@ Cliff Walking이 재미있었던 이유는, “같은 환경”인데도
 ---
 
 <style>
-/* =========================
-   읽기 편한 포폴 타이포 세팅
-   (AplusMaker에서 잘 된 버전 기반)
-   ========================= */
+/* (기존 유지) TOC 박스 */
 .custom-toc {
   position: fixed;
   top: 140px;
@@ -795,7 +792,7 @@ Cliff Walking이 재미있었던 이유는, “같은 환경”인데도
   line-height: 1.6;
 }
 
-/* 제목 숨기기 (원하면 유지 가능) */
+/* "TOC" 텍스트 숨김 */
 .custom-toc > p:first-child { display: none; }
 
 /* 링크 스타일 */
@@ -805,12 +802,19 @@ Cliff Walking이 재미있었던 이유는, “같은 환경”인데도
 }
 .custom-toc a:hover { color: #3b82f6; }
 
-/* 리스트 들여쓰기 */
+/* 리스트 기본 들여쓰기 */
 .custom-toc ul { padding-left: 14px; }
 .custom-toc li { margin-bottom: 6px; }
 
-/* 깊은 목차는 숨김 (원하면 제거) */
-.custom-toc ul ul { display: none; }
+/* ✅ 핵심: H2(= ul ul)는 보여주고, H3(= ul ul ul)부터 숨기기 */
+.custom-toc ul ul { display: block; }
+.custom-toc ul ul ul { display: none; }
+
+/* ✅ H1 항목은 숨기고(H1 링크), 그 아래 H2만 노출 */
+.custom-toc > ul > li > a { display: none; }
+
+/* (선택) H2 들여쓰기 과하면 줄이기 */
+.custom-toc > ul > li > ul { padding-left: 0; }
 
 /* 모바일에서는 숨김 */
 @media (max-width: 1200px) {
