@@ -3,6 +3,7 @@ layout: default
 ---
 
 {% include lang.html %}
+{% include toc-status.html %}
 
 <article class="px-1">
   {% if page.layout == 'page' or page.collection == 'tabs' %}
@@ -11,12 +12,16 @@ layout: default
 
     <h1 class="dynamic-title">{{ title }}</h1>
 
-    {%- if page.toc -%}
-      {% include toc.html html=content %}
-    {%- endif -%}
+    <div class="row">
+      <div class="col-12 col-lg-9">
+        <div class="content">
+          {{ content }}
+        </div>
+      </div>
 
-    <div class="content">
-      {{ content }}
+      <div class="col-lg-3 d-none d-lg-block">
+        {% include toc.html lang=lang %}
+      </div>
     </div>
   {% else %}
     {{ content }}
