@@ -3,15 +3,114 @@ layout: page
 title: YNNECT
 permalink: /projects/ynnect/
 image: /assets/img/projects/ynnect/ynnect-thumb.png
+toc: true
+toc_sticky: true
+toc_label: "목차"
 ---
 
-## 1. 프로젝트 소개
+<style>
+/* =========================================
+   Portfolio Readability Pack (Chirpy)
+   - 글자 크기/여백/헤딩/코드/테이블 가독성 통일
+   ========================================= */
+
+.page__content,
+.page-content,
+.page__inner-wrap,
+.page__inner-wrap .page__content {
+  line-height: 1.9;
+  font-size: 1.05rem;
+  letter-spacing: 0.15px;
+}
+
+.page__content,
+.page-content {
+  max-width: 820px;
+}
+
+/* 헤딩: TOC에 잘 걸리도록 명확하게 */
+.page__content h2,
+.page-content h2 {
+  font-size: 1.90rem;
+  font-weight: 850;
+  margin-top: 88px;
+  margin-bottom: 28px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid rgba(0,0,0,0.08);
+}
+
+.page__content h3,
+.page-content h3 {
+  font-size: 1.30rem;
+  font-weight: 780;
+  margin-top: 54px;
+  margin-bottom: 18px;
+}
+
+/* 문단/리스트 여백 */
+.page__content p,
+.page-content p { margin: 0 0 22px 0; }
+
+.page__content ul,
+.page-content ul {
+  margin: 0 0 28px 0;
+  padding-left: 20px;
+}
+
+.page__content li,
+.page-content li { margin-bottom: 10px; }
+
+/* 이미지 여백 */
+.page__content img,
+.page-content img {
+  margin: 14px 0 34px 0;
+  border-radius: 14px;
+}
+
+/* 테이블 */
+.page__content table,
+.page-content table {
+  margin: 18px 0 42px 0;
+  font-size: 0.95rem;
+}
+
+.page__content thead,
+.page-content thead {
+  font-weight: 800;
+  background: rgba(0,0,0,0.04);
+}
+
+/* 강조 텍스트 */
+.page__content strong,
+.page-content strong { font-weight: 800; }
+
+/* 코드 */
+.page__content pre,
+.page-content pre {
+  font-size: 0.92rem;
+  border-radius: 12px;
+  padding: 18px;
+  overflow-x: auto;
+}
+
+.page__content code,
+.page-content code { font-size: 0.92rem; }
+
+/* 구분선 */
+.page__content hr,
+.page-content hr {
+  margin: 70px 0;
+  opacity: 0.25;
+}
+</style>
+
+## 1) 프로젝트 소개
 위치 · 시간표 · 상태를 공유하는 **캠퍼스 기반 소셜 플랫폼**입니다.  
 단순 CRUD가 아니라 **JWT 인증 흐름 표준화**와 **공개 정책(UserSetting) 기반 접근 제어**를 중심으로 백엔드 구조를 설계·구현했습니다.
 
 ---
 
-## 2. Tech Stack
+## 2) Tech Stack
 ![Tools](/assets/img/projects/ynnect/backendTools.png)
 
 ### Backend
@@ -28,7 +127,7 @@ Gradle · Git · GitHub
 
 ---
 
-## 3. 주요 화면
+## 3) 주요 화면
 
 ### 회원가입
 ![Register](/assets/img/projects/ynnect/register.png)
@@ -47,10 +146,9 @@ Gradle · Git · GitHub
 
 ---
 
-## 4. 기술 설계 및 문제 해결
+## 4) 기술 설계 및 문제 해결
 
-### 1) 인증 객체 타입 혼재로 발생한 Principal 캐스팅 오류를 JwtUserDetails 단일 흐름으로 통일하여 인증 처리 일관성을 확보했습니다
-
+### 4.1 인증 객체 타입 혼재로 발생한 Principal 캐스팅 오류를 JwtUserDetails 단일 흐름으로 통일
 **문제**  
 컨트롤러마다 Principal 타입이 섞여 들어오면서 캐스팅 오류가 발생했고,  
 getId() / getUserId()가 혼용되어 인증 흐름이 흔들렸습니다.
@@ -66,8 +164,7 @@ JwtAuthenticationFilter에서 토큰 검증 → userId claim 추출 → Security
 
 ---
 
-### 2) 엔티티 변경이 DTO 응답에 반영되지 않아 발생한 시간표 title undefined 문제를 응답 구조 정비로 해결하여 데이터 정합성을 확보했습니다
-
+### 4.2 엔티티 변경이 DTO 응답에 반영되지 않아 발생한 시간표 title undefined 문제를 응답 구조 정비로 해결
 **문제**  
 시간표 title 필드 추가 이후 프론트에서 undefined가 표시되었고,  
 엔티티/DTO 매핑 불일치로 응답 정합성이 깨졌습니다.
@@ -81,8 +178,7 @@ TimetableResponse DTO에도 동일 필드를 매핑하도록 응답 구조를 �
 
 ---
 
-### 3) 친구 시간표가 무분별하게 조회될 수 있는 구조를 친구 관계 + 공개 설정 조건 분기로 제한하여 접근 제어 정책을 명확히 했습니다
-
+### 4.3 친구 시간표가 무분별하게 조회될 수 있는 구조를 친구 관계 + 공개 설정 조건 분기로 제한
 **문제**  
 친구 관계만으로 시간표 조회가 가능하면 민감 정보 노출 위험이 있었고,  
 공개 설정이 저장 값으로만 남아 정책으로 작동하지 않았습니다.
@@ -96,8 +192,7 @@ TimetableResponse DTO에도 동일 필드를 매핑하도록 응답 구조를 �
 
 ---
 
-### 4) 사용자 입력 기반 학기 설정의 오류 가능성을 서버 날짜 기반 자동 계산으로 전환하여 학기 데이터 일관성을 확보했습니다
-
+### 4.4 사용자 입력 기반 학기 설정의 오류 가능성을 서버 날짜 기반 자동 계산으로 전환
 **문제**  
 학기를 사용자 입력에 맡기면 오타/불일치로 데이터 정합성이 깨질 수 있었습니다.
 
@@ -109,15 +204,14 @@ TimetableResponse DTO에도 동일 필드를 매핑하도록 응답 구조를 �
 - 9~12월: 2학기  
 - 12~3월: 겨울학기  
 
-시간표 생성 시 사용자는 제목만 입력하고, 학기는 서버가 결정하도록 흐름을 단순화했습니다.
+시간표 생성 시 사용자는 **제목만 입력**, 학기는 서버가 결정하도록 흐름을 단순화했습니다.
 
 **결과**  
 입력 부담이 줄고 학기 데이터가 일관되게 유지되어 조회/집계 로직이 안정화되었습니다.
 
 ---
 
-### 5) 가입 직후 연관 엔티티 부재로 발생할 수 있는 Null 분기 문제를 User 중심 1:1 자동 생성 구조로 막아 초기 상태 일관성을 확보했습니다
-
+### 4.5 가입 직후 연관 엔티티 부재로 발생할 수 있는 Null 분기 문제를 User 중심 1:1 자동 생성 구조로 방지
 **문제**  
 회원가입 직후 설정/상태/위치 정보가 없으면 조회 로직에서 Null 분기가 발생했고,  
 초기 공개 정책/상태 값이 불명확해 서비스 전반의 예외 처리가 늘어날 수 있었습니다.
@@ -132,10 +226,9 @@ TimetableResponse DTO에도 동일 필드를 매핑하도록 응답 구조를 �
 
 ---
 
-## 5. Code Samples
+## 5) Code Samples
 
-### 1) User 중심 1:1 연관 엔티티 생명주기 묶음
-
+### 5.1 User 중심 1:1 연관 엔티티 생명주기 묶음
 ~~~java
 @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
 private UserLocation locations;
@@ -148,12 +241,11 @@ private UserSetting settings;
 ~~~
 
 User 중심으로 연관 엔티티 생명주기를 묶어  
-가입 직후 Null 분기를 구조적으로 제거했습니다.
+**가입 직후 Null 분기**를 구조적으로 제거했습니다.
 
 ---
 
-### 2) 약관 동의 시각 자동 기록(@PrePersist)
-
+### 5.2 약관 동의 시각 자동 기록(@PrePersist)
 ~~~java
 @Column(name = "consented_at", nullable = false)
 private LocalDateTime consentedAt;
@@ -164,13 +256,12 @@ protected void onCreate() {
 }
 ~~~
 
-서비스 로직 누락 가능성을 제거하기 위해  
-엔티티 저장 시점에 동의 시각이 자동 기록되도록 설계했습니다.
+서비스 로직 누락 가능성을 줄이기 위해  
+엔티티 저장 시점에 **동의 시각이 자동 기록**되도록 설계했습니다.
 
 ---
 
-### 3) 친구 시간표 조회 접근 제어 분기(친구 여부 + 공개 설정)
-
+### 5.3 친구 시간표 조회 접근 제어 분기(친구 여부 + 공개 설정)
 ~~~java
 if (!friendshipService.isFriend(meId, friendId)) {
     throw new AccessDeniedException("not friends");
@@ -189,8 +280,7 @@ if (!setting.getIsTimetablePublic()) {
 
 ---
 
-## 6. Contribution
-
+## 6) Contribution
 - 사용자 도메인 및 1:1 연관 구조 설계
 - JWT 인증 필터 및 SecurityContext 주입 구조 구현
 - 위치/상태/설정/친구/시간표/약관 API 전반 구현
@@ -199,7 +289,7 @@ if (!setting.getIsTimetablePublic()) {
 
 ---
 
-## 7. API Specification (요약)
+## 7) API Specification (요약)
 
 ### Auth
 | Method | URL | Description |
@@ -258,9 +348,8 @@ if (!setting.getIsTimetablePublic()) {
 
 ---
 
-## 8. 회고
-
-인증 흐름을 JwtUserDetails 단일 규칙으로 고정한 것이 가장 큰 수확이었습니다.  
+## 8) 회고
+인증 흐름을 **JwtUserDetails 단일 규칙**으로 고정한 것이 가장 큰 수확이었습니다.  
 기능이 늘어도 인증 구조가 흔들리지 않는 기반을 만들 수 있었습니다.
 
 또한 공개 설정을 단순 저장값이 아닌 조회 정책 기준으로 연결하면서  
