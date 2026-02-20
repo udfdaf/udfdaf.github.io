@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: YNNECT
 permalink: /projects/ynnect/
 image: /assets/img/projects/ynnect/ynnect-thumb.png
@@ -292,34 +292,40 @@ if (!setting.getIsTimetablePublic()) {
 ## 7) API Specification (요약)
 
 ### Auth
+
 | Method | URL | Description |
 |--------|-----|-------------|
 | POST | /auth/kakao | 카카오 로그인 · JWT 발급 |
 
 ### Users
+
 | Method | URL | Description |
 |--------|-----|-------------|
 | GET | /users/me | 내 정보 조회 |
 | PATCH | /users/me/nickname | 닉네임 변경 |
 
 ### Location
+
 | Method | URL | Description |
 |--------|-----|-------------|
 | POST/PATCH | /locations/me | 내 위치 업데이트(위경도) |
 
 ### Status
+
 | Method | URL | Description |
 |--------|-----|-------------|
 | PATCH | /status/message | 상태 메시지 변경 |
 | PATCH | /status/public | 상태 공개 여부 변경 |
 
 ### Settings (Privacy)
+
 | Method | URL | Description |
 |--------|-----|-------------|
 | GET | /settings/privacy | 공개 설정 조회 |
 | PATCH | /settings/privacy | 공개 설정 변경 |
 
 ### Friends
+
 | Method | URL | Description |
 |--------|-----|-------------|
 | POST | /friends | 친구 추가 |
@@ -327,6 +333,7 @@ if (!setting.getIsTimetablePublic()) {
 | GET | /friends | 친구 목록 조회 |
 
 ### Timetables
+
 | Method | URL | Description |
 |--------|-----|-------------|
 | POST | /timetables | 시간표 생성 |
@@ -334,6 +341,7 @@ if (!setting.getIsTimetablePublic()) {
 | DELETE | /timetables/{id} | 시간표 삭제 |
 
 ### Schedule Items
+
 | Method | URL | Description |
 |--------|-----|-------------|
 | POST | /schedule-items | 과목 추가 |
@@ -341,6 +349,7 @@ if (!setting.getIsTimetablePublic()) {
 | DELETE | /schedule-items/{id} | 과목 삭제 |
 
 ### Terms / Consents
+
 | Method | URL | Description |
 |--------|-----|-------------|
 | GET | /terms | 약관 목록 조회 |
