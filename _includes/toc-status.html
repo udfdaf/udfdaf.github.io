@@ -3,8 +3,11 @@
 {% endcomment %}
 
 {% assign enable_toc = false %}
+
 {% if site.toc and page.toc %}
-  {% if page.content contains '<h2' or page.content contains '<h3' %}
+  {%- assign raw = page.content | strip -%}
+
+  {%- if raw contains '## ' or raw contains '### ' -%}
     {% assign enable_toc = true %}
-  {% endif %}
+  {%- endif -%}
 {% endif %}
