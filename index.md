@@ -205,7 +205,7 @@ toc: false
 
     <div class="project-content">
       <div class="project-thumb-wrap">
-        <img class="project-thumb" src="/assets/img/projects/ynnect/ynnect-thumb.jpg" alt="YNNECT thumbnail">
+        <img class="project-thumb" src="/assets/img/projects/ynnect/ynnect-thumb.png" alt="YNNECT thumbnail">
       </div>
 
       <div class="project-body">
@@ -224,7 +224,7 @@ toc: false
 
     <div class="project-content">
       <div class="project-thumb-wrap">
-        <img class="project-thumb" src="/assets/img/projects/aplusmaker/aplusmaker-thumb.jpg" alt="AplusMaker thumbnail">
+        <img class="project-thumb" src="/assets/img/projects/aplusmaker/aplusmaker-thumb.png" alt="AplusMaker thumbnail">
       </div>
 
       <div class="project-body">
@@ -243,7 +243,7 @@ toc: false
 
     <div class="project-content">
       <div class="project-thumb-wrap">
-        <img class="project-thumb" src="/assets/img/projects/robot/robot-thumb.jpg" alt="Robot Monitoring thumbnail">
+        <img class="project-thumb" src="/assets/img/projects/robot/robot-thumb.png" alt="Robot Monitoring thumbnail">
       </div>
 
       <div class="project-body">
@@ -271,7 +271,7 @@ toc: false
 
       <div class="project-content">
         <div class="project-thumb-wrap">
-          <img class="project-thumb" src="/assets/img/projects/robotics/robotics-thumb.jpg" alt="Robotics thumbnail">
+          <img class="project-thumb" src="/assets/img/projects/robotics/robotics-thumb.png" alt="Robotics thumbnail">
         </div>
 
         <div class="project-body">
