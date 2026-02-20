@@ -3,13 +3,9 @@ layout: page
 title: AplusMaker
 permalink: /projects/aplusmaker/
 image: /assets/img/projects/aplusmaker/aplusmaker-thumb.png
-toc: true
-toc_sticky: true
-toc_label: "목차"
 ---
 <div class="custom-toc">
-* TOC
-{:toc}
+{{ content | toc }}
 </div>
 
 <style>
