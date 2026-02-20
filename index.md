@@ -247,9 +247,29 @@ toc: false
 </div>
 
 <div class="more-projects" id="moreProjects">
-  <div class="empty-box">
-    추가 프로젝트가 등록되면 이 영역에 표시됩니다.
+  <div class="project-grid">
+
+    <!-- Robotics / Algorithms -->
+    <div class="project-card">
+      <a class="project-link" href="/projects/robotics/" aria-label="Robotics Algorithms 프로젝트로 이동"></a>
+
+      <div class="project-content">
+        <div class="project-thumb-wrap">
+          <img class="project-thumb" src="/assets/img/projects/robotics/robotics-thumb.png" alt="Robotics thumbnail">
+        </div>
+
+        <div class="project-body">
+          <div class="project-tag">Robotics · Algorithms</div>
+          <h3 class="project-title">🧪 Robotics Algorithms (HW)</h3>
+          <p class="project-desc">Bug · Kinematics 등 로보틱스 알고리즘 과제 구현/정리</p>
+        </div>
+
+        <div class="project-divider"></div>
+      </div>
+    </div>
+
   </div>
+
 </div>
 
 <script>
