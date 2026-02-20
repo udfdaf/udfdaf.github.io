@@ -386,7 +386,7 @@ public UserStatsDTO getUserStats(Long userId) {
 
 ## 7. API Specification (요약)
 
-### 인증 / 회원
+### 7-1. 인증 / 회원
 
 | Method | URL | Description |
 |--------|-----|-------------|
@@ -417,7 +417,7 @@ public UserStatsDTO getUserStats(Long userId) {
 
 ---
 
-### 7-3. 게시판
+### 7-4. 게시판
 
 | Method | URL | Description |
 |--------|-----|-------------|
@@ -429,7 +429,7 @@ public UserStatsDTO getUserStats(Long userId) {
 
 ---
 
-### 7-4. 댓글
+### 7-5. 댓글
 
 | Method | URL | Description |
 |--------|-----|-------------|
@@ -439,7 +439,7 @@ public UserStatsDTO getUserStats(Long userId) {
 
 ---
 
-### 7-5. 좋아요
+### 7-6. 좋아요
 
 | Method | URL | Description |
 |--------|-----|-------------|
@@ -447,7 +447,7 @@ public UserStatsDTO getUserStats(Long userId) {
 
 ---
 
-### 7-6. 마이페이지
+### 7-7. 마이페이지
 
 | Method | URL | Description |
 |--------|-----|-------------|
