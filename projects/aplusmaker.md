@@ -159,19 +159,19 @@ image: /assets/img/projects/aplusmaker/aplusmaker-thumb.png
 
 ## 2. Tech Stack
 
-### 2-1. Backend
+### Backend
 `Java` · `Spring Boot` · `Spring Security` · `JPA (Hibernate)`
 
-### 2-2. Database
+### Database
 `MariaDB` · `MySQL`
 
-### 2-3. View
+### View
 `Thymeleaf`
 
-### 2-4. Documentation
+### Documentation
 `OpenAPI (Swagger)`
 
-### 2-5. DevOps & Collaboration
+### DevOps & Collaboration
 `Gradle` · `Git` · `GitHub`
 
 ---
@@ -180,7 +180,7 @@ image: /assets/img/projects/aplusmaker/aplusmaker-thumb.png
 
 ![IA](/assets/img/projects/aplusmaker/aplusmaker_ia.png)
 
-### 3-1. 구조 설계 의도
+### 구조 설계 의도
 
 - 문제 추천 / 커뮤니티 / 마이페이지 기능을 도메인 단위로 분리
 - 추천 결과를 게시글 작성과 연결하여 서비스 흐름 확장
@@ -192,7 +192,7 @@ image: /assets/img/projects/aplusmaker/aplusmaker-thumb.png
 
 ![ERD](/assets/img/projects/aplusmaker/erd.png)
 
-### 4-1. 핵심 설계 포인트
+### 핵심 설계 포인트
 
 - 추천 요청 1회 = `ProblemRecordGroup`
 - 추천된 각 문제 = `ProblemRecord`
@@ -386,7 +386,7 @@ public UserStatsDTO getUserStats(Long userId) {
 
 ## 7. API Specification (요약)
 
-### 7-1. 인증 / 회원
+### 인증 / 회원
 
 | Method | URL | Description |
 |--------|-----|-------------|
@@ -459,18 +459,18 @@ public UserStatsDTO getUserStats(Long userId) {
 
 ## 8. 기여도
 
-### 8-1. 역할
+### 역할
 - 팀장
 - 서비스 기획 및 전체 기능 흐름 설계
 - 추천 / 커뮤니티 / 마이페이지 백엔드 구현 담당
 
-### 8-2. 기획
+### 기획
 - 추천 → 기록 → 게시글 확장 → 커뮤니티 토론으로 이어지는 전체 서비스 흐름 설계
 - 추천 요청 단위를 데이터로 남기는 구조 기획
 - 활동 통계 기반 마이페이지 구조 정의
 - 기능 우선순위 및 도메인 분리 설계
 
-### 8-3. 구현 담당 영역
+### 구현 담당 영역
 - 추천 도메인 전체 설계 및 구현
 - 추천 기록 그룹/레코드 구조 설계
 - 조건 기반 추천 로직 구현
@@ -482,7 +482,7 @@ public UserStatsDTO getUserStats(Long userId) {
   - 추천 입력 → 결과 → history 한 페이지 구성
   - 추천 결과를 게시글 작성 폼으로 자동 주입
 
-### 8-4. 제외 영역
+### 제외 영역
 - 로그인/회원가입 Security 설정 및 인증 처리 부분은 담당하지 않음
 
 ---
