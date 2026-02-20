@@ -7,12 +7,13 @@ image: /assets/img/projects/robotics/robotics-thumb.jpg
 
 <div class="custom-toc" markdown="1">
 * TOC
-{:toc}
+{:toc: .toc__menu}
 </div>
 
 <style>
 /* =========================
    읽기 편한 포폴 타이포 세팅
+   (AplusMaker에서 잘 된 버전 기반)
    ========================= */
 .custom-toc {
   position: fixed;
@@ -28,33 +29,45 @@ image: /assets/img/projects/robotics/robotics-thumb.jpg
   line-height: 1.6;
 }
 
+/* 제목 숨기기 (원하면 유지 가능) */
 .custom-toc > p:first-child { display: none; }
 
+/* 링크 스타일 */
 .custom-toc a {
   text-decoration: none;
   color: inherit;
 }
-
 .custom-toc a:hover { color: #3b82f6; }
 
+/* 리스트 들여쓰기 */
 .custom-toc ul { padding-left: 14px; }
+.custom-toc li { margin-bottom: 6px; }
 
+/* 깊은 목차는 숨김 (원하면 제거) */
+.custom-toc ul ul { display: none; }
+
+/* 모바일에서는 숨김 */
 @media (max-width: 1200px) {
   .custom-toc { display: none; }
 }
 
-.custom-toc li { margin-bottom: 6px; }
-
-.custom-toc ul ul { display: none; }
-
+/* ---- 본문 타이포 ---- */
 .page__content,
 .page-content,
 .page__inner-wrap,
 .page__inner-wrap .page__content {
   line-height: 1.9;
   font-size: 1.05rem;
+  letter-spacing: 0.2px;
+}
+
+/* 본문 폭 제한 */
+.page__content,
+.page-content {
   max-width: 780px;
 }
+
+/* H2 */
 .page__content h2,
 .page-content h2 {
   font-size: 1.85rem;
@@ -65,6 +78,7 @@ image: /assets/img/projects/robotics/robotics-thumb.jpg
   border-bottom: 2px solid rgba(0,0,0,0.08);
 }
 
+/* H3 */
 .page__content h3,
 .page-content h3 {
   font-size: 1.32rem;
@@ -73,10 +87,54 @@ image: /assets/img/projects/robotics/robotics-thumb.jpg
   margin-bottom: 22px;
 }
 
-.page__content p { margin-bottom: 24px; }
-.page__content ul { margin-bottom: 30px; padding-left: 20px; }
-.page__content li { margin-bottom: 10px; }
-.page__content hr { margin: 70px 0; opacity: 0.25; }
+/* 문단/리스트 여백 */
+.page__content p,
+.page-content p { margin-bottom: 24px; }
+
+.page__content ul,
+.page-content ul {
+  margin-bottom: 30px;
+  padding-left: 20px;
+}
+
+.page__content li,
+.page-content li { margin-bottom: 10px; }
+
+/* 테이블 */
+.page__content table,
+.page-content table {
+  margin-bottom: 40px;
+  font-size: 0.95rem;
+}
+
+.page__content thead,
+.page-content thead {
+  font-weight: 700;
+  background: rgba(0,0,0,0.04);
+}
+
+/* 강조 */
+.page__content strong,
+.page-content strong { font-weight: 750; }
+
+/* 코드 블록 */
+.page__content pre,
+.page-content pre {
+  font-size: 0.92rem;
+  border-radius: 12px;
+  padding: 18px;
+  overflow-x: auto;
+}
+
+.page__content code,
+.page-content code { font-size: 0.92rem; }
+
+/* 구분선 */
+.page__content hr,
+.page-content hr {
+  margin: 70px 0;
+  opacity: 0.25;
+}
 </style>
 
 # Robotics Algorithms & Planning Study
