@@ -78,7 +78,7 @@ image: /assets/img/projects/robotics/robotics-thumb.jpg
 .page__content hr { margin: 70px 0; opacity: 0.25; }
 </style>
 
-# Robotics Algorithms & Planning Study (HW1~HW2)
+# Robotics Algorithms & Planning Study
 
 서비스 프로젝트와 달리, 이 페이지는 로보틱스 수업 과제를 기반으로  
 **이론 → 구현 포인트 → 인사이트**만 남긴 학술형 정리입니다.
