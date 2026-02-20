@@ -243,7 +243,7 @@ toc: false
 
     <div class="project-content">
       <div class="project-thumb-wrap">
-        <img class="project-thumb" src="/assets/img/projects/robot/robot-thumb.png" alt="Robot Monitoring thumbnail">
+        <img class="project-thumb" src="/assets/img/projects/robot/robot-thumb.jpg" alt="Robot Monitoring thumbnail">
       </div>
 
       <div class="project-body">
