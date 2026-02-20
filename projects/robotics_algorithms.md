@@ -7,7 +7,7 @@ image: /assets/img/projects/robotics/robotics-thumb.jpg
 
 <div class="custom-toc" markdown="1">
 * TOC
-{:toc}
+{:toc: .toc__menu}
 </div>
 
 <style>
