@@ -22,7 +22,7 @@ order: 2
 
 /* ====== Card ====== */
 .project-card{
-  position:relative;              /* 오버레이 링크용 */
+  position:relative;
   border-radius:18px;
   overflow:hidden;
   background:#fff;
@@ -31,19 +31,16 @@ order: 2
   will-change: transform;
 }
 
-/* hover */
 .project-card:hover{
   transform: translateY(-4px);
   box-shadow:0 16px 40px rgba(0,0,0,0.12);
 }
 
-/* click press */
 .project-card:active{
   transform: translateY(-1px) scale(0.985);
   box-shadow:0 12px 30px rgba(0,0,0,0.10);
 }
 
-/* 카드 전체 클릭 영역 */
 .project-link{
   position:absolute;
   inset:0;
@@ -52,7 +49,6 @@ order: 2
   outline:none;
 }
 
-/* 키보드 접근성 포커스 */
 .project-link:focus-visible{
   box-shadow: 0 0 0 4px rgba(55, 125, 255, 0.35);
 }
@@ -77,7 +73,6 @@ order: 2
   transform: scale(1.08);
 }
 
-/* 고급 오버레이 */
 .project-thumb::after{
   content:"";
   position:absolute;
@@ -112,7 +107,6 @@ order: 2
   line-height:1.45;
 }
 
-/* 작은 라벨(선택) */
 .project-tag{
   display:inline-flex;
   align-items:center;
@@ -182,14 +176,26 @@ order: 2
   </div>
 
 </div>
-
 </div>
 
 <div class="projects-section">
 
 ## 🧪 Sub Projects
 
-- Robotics / Algorithms (추가 예정)
-- Unity / MFC (추가 예정)
+<div class="project-grid">
 
+  <!-- Robotics / Algorithms -->
+  <div class="project-card">
+    <a class="project-link" href="/projects/robotics/" aria-label="Robotics Algorithms 프로젝트로 이동"></a>
+    <div class="project-thumb">
+      <img src="/assets/img/projects/robotics/robotics-thumb.png" alt="Robotics thumbnail">
+    </div>
+    <div class="project-body">
+      <div class="project-tag">Robotics · Algorithms</div>
+      <h3 class="project-title">🧪 Robotics Algorithms (HW)</h3>
+      <p class="project-desc">Bug · Kinematics 등 로보틱스 알고리즘 과제 구현/정리</p>
+    </div>
+  </div>
+
+</div>
 </div>
