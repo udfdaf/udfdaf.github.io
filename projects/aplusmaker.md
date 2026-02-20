@@ -4,8 +4,9 @@ title: AplusMaker
 permalink: /projects/aplusmaker/
 image: /assets/img/projects/aplusmaker/aplusmaker-thumb.png
 ---
-<div class="custom-toc">
-{{ content | toc }}
+<div class="custom-toc" markdown="1">
+* TOC
+{:toc}
 </div>
 
 <style>
@@ -55,6 +56,9 @@ image: /assets/img/projects/aplusmaker/aplusmaker-thumb.png
 }
 .custom-toc li {
   margin-bottom: 6px;
+}
+.custom-toc ul ul {
+  display: none;
 }
 .page__content,
 .page-content,
@@ -143,7 +147,7 @@ image: /assets/img/projects/aplusmaker/aplusmaker-thumb.png
 }
 </style>
 
-## 프로젝트 소개
+## 1. 프로젝트 소개
 문제 유형 · 키워드 · 과목 조건을 기반으로 맞춤형 문제를 추천하고,  
 추천 이력 저장과 커뮤니티 확장을 통해 학습 데이터를 축적하도록 설계한 문제은행 플랫폼입니다.
 
@@ -153,30 +157,30 @@ image: /assets/img/projects/aplusmaker/aplusmaker-thumb.png
 
 ---
 
-## Tech Stack
+## 2. Tech Stack
 
-### Backend
+### 2-1. Backend
 `Java` · `Spring Boot` · `Spring Security` · `JPA (Hibernate)`
 
-### Database
+### 2-2. Database
 `MariaDB` · `MySQL`
 
-### View
+### 2-3. View
 `Thymeleaf`
 
-### Documentation
+### 2-4. Documentation
 `OpenAPI (Swagger)`
 
-### DevOps & Collaboration
+### 2-5. DevOps & Collaboration
 `Gradle` · `Git` · `GitHub`
 
 ---
 
-## Information Architecture
+## 3. Information Architecture
 
 ![IA](/assets/img/projects/aplusmaker/aplusmaker_ia.png)
 
-### 구조 설계 의도
+### 3-1. 구조 설계 의도
 
 - 문제 추천 / 커뮤니티 / 마이페이지 기능을 도메인 단위로 분리
 - 추천 결과를 게시글 작성과 연결하여 서비스 흐름 확장
@@ -184,11 +188,11 @@ image: /assets/img/projects/aplusmaker/aplusmaker-thumb.png
 
 ---
 
-## ERD
+## 4. ERD
 
 ![ERD](/assets/img/projects/aplusmaker/erd.png)
 
-### 핵심 설계 포인트
+### 4-1. 핵심 설계 포인트
 
 - 추천 요청 1회 = `ProblemRecordGroup`
 - 추천된 각 문제 = `ProblemRecord`
@@ -208,11 +212,11 @@ image: /assets/img/projects/aplusmaker/aplusmaker-thumb.png
 
 ---
 
-## 기술 설계 및 문제 해결
+## 5. 기술 설계 및 문제 해결
 
 ---
 
-### 추천 요청 단위 추적이 불가능한 구조를 그룹 기반 기록 설계로 개선하여 추천 이력 복원 가능성을 확보했습니다
+### 5-1. 추천 요청 단위 추적이 불가능한 구조를 그룹 기반 기록 설계로 개선하여 추천 이력 복원 가능성을 확보했습니다
 
 **문제**  
 추천 1회 요청에서 여러 문제가 생성되지만, 문제 단위로만 저장하면 추천 맥락을 추적할 수 없었습니다.
@@ -227,7 +231,7 @@ image: /assets/img/projects/aplusmaker/aplusmaker-thumb.png
 
 ---
 
-### 단순 랜덤 조회의 한계를 조건 기반 필터 로직으로 개선하여 사용자 의도 반영도를 높였습니다
+### 5-2. 단순 랜덤 조회의 한계를 조건 기반 필터 로직으로 개선하여 사용자 의도 반영도를 높였습니다
 
 **문제**  
 무작위 문제 조회는 사용자 조건(유형, 키워드)을 반영하지 못했습니다.
@@ -242,7 +246,7 @@ Native Query를 사용하여 조건과 랜덤을 동시에 처리했습니다.
 
 ---
 
-### 추천 결과 소비로 끝나는 구조를 게시판 자동 확장 흐름으로 연결하여 학습-공유-토론 구조를 확보했습니다
+### 5-3. 추천 결과 소비로 끝나는 구조를 게시판 자동 확장 흐름으로 연결하여 학습-공유-토론 구조를 확보했습니다
 
 **문제**  
 추천 결과가 화면 소비로 끝나 서비스 확장성이 부족했습니다.
@@ -257,7 +261,7 @@ Native Query를 사용하여 조건과 랜덤을 동시에 처리했습니다.
 
 ---
 
-### 게시글 삭제 시 데이터 무결성 문제를 선삭제 정책으로 정리하여 참조 무결성을 확보했습니다
+### 5-4. 게시글 삭제 시 데이터 무결성 문제를 선삭제 정책으로 정리하여 참조 무결성을 확보했습니다
 
 **문제**  
 게시글 삭제 시 댓글/좋아요가 남아있으면 무결성 문제가 발생했습니다.
@@ -274,7 +278,7 @@ Native Query를 사용하여 조건과 랜덤을 동시에 처리했습니다.
 
 ---
 
-### 마이페이지 전체 조회 부담을 count 기반 집계 분리 구조로 개선하여 조회 비용을 최소화했습니다
+### 5-5. 마이페이지 전체 조회 부담을 count 기반 집계 분리 구조로 개선하여 조회 비용을 최소화했습니다
 
 **문제**  
 마이페이지에서 모든 활동 데이터를 join으로 조회하면 성능 부담이 발생할 수 있었습니다.
@@ -295,11 +299,11 @@ Native Query를 사용하여 조건과 랜덤을 동시에 처리했습니다.
 
 ---
 
-## Code Samples
+## 6. Code Samples
 
 ---
 
-### 1) 추천 기록 그룹 저장 로직 (ProblemRecordGroup + ProblemRecord)
+### 6-1. 추천 기록 그룹 저장 로직 (ProblemRecordGroup + ProblemRecord)
 
 **의도**  
 추천 요청 단위를 그룹으로 저장하고, 추천된 문제를 레코드로 분리하여  
@@ -331,7 +335,7 @@ for (Problems problem : problems) {
 
 ---
 
-### 2) 조건 기반 추천 로직 (유형 + 키워드 필터)
+### 6-2. 조건 기반 추천 로직 (유형 + 키워드 필터)
 
 **의도**  
 사용자 조건을 반영한 추천을 위해 유형과 키워드를 결합한 쿼리를 설계했습니다.
@@ -355,7 +359,7 @@ List<Problems> findRandomByQuestionTypeAndKeywords(
 
 ---
 
-### 3) 마이페이지 통계 집계 로직
+### 6-3. 마이페이지 통계 집계 로직
 
 **의도**  
 활동 데이터를 join 없이 count 기반으로 집계해 조회 부담을 줄였습니다.
@@ -380,9 +384,9 @@ public UserStatsDTO getUserStats(Long userId) {
 
 ---
 
-## API Specification (요약)
+## 7. API Specification (요약)
 
-### 인증 / 회원
+### 7-1. 인증 / 회원
 
 | Method | URL | Description |
 |--------|-----|-------------|
@@ -394,7 +398,7 @@ public UserStatsDTO getUserStats(Long userId) {
 
 ---
 
-### 문제 추천
+### 7-2. 문제 추천
 
 | Method | URL | Description |
 |--------|-----|-------------|
@@ -403,7 +407,7 @@ public UserStatsDTO getUserStats(Long userId) {
 
 ---
 
-### 추천 기록 관리
+### 7-3. 추천 기록 관리
 
 | Method | URL | Description |
 |--------|-----|-------------|
@@ -413,7 +417,7 @@ public UserStatsDTO getUserStats(Long userId) {
 
 ---
 
-### 게시판
+### 7-3. 게시판
 
 | Method | URL | Description |
 |--------|-----|-------------|
@@ -425,7 +429,7 @@ public UserStatsDTO getUserStats(Long userId) {
 
 ---
 
-### 댓글
+### 7-4. 댓글
 
 | Method | URL | Description |
 |--------|-----|-------------|
@@ -435,7 +439,7 @@ public UserStatsDTO getUserStats(Long userId) {
 
 ---
 
-### 좋아요
+### 7-5. 좋아요
 
 | Method | URL | Description |
 |--------|-----|-------------|
@@ -443,7 +447,7 @@ public UserStatsDTO getUserStats(Long userId) {
 
 ---
 
-### 마이페이지
+### 7-6. 마이페이지
 
 | Method | URL | Description |
 |--------|-----|-------------|
@@ -453,20 +457,20 @@ public UserStatsDTO getUserStats(Long userId) {
 
 ---
 
-## 기여도
+## 8. 기여도
 
-### 역할
+### 8-1. 역할
 - 팀장
 - 서비스 기획 및 전체 기능 흐름 설계
 - 추천 / 커뮤니티 / 마이페이지 백엔드 구현 담당
 
-### 기획
+### 8-2. 기획
 - 추천 → 기록 → 게시글 확장 → 커뮤니티 토론으로 이어지는 전체 서비스 흐름 설계
 - 추천 요청 단위를 데이터로 남기는 구조 기획
 - 활동 통계 기반 마이페이지 구조 정의
 - 기능 우선순위 및 도메인 분리 설계
 
-### 구현 담당 영역
+### 8-3. 구현 담당 영역
 - 추천 도메인 전체 설계 및 구현
 - 추천 기록 그룹/레코드 구조 설계
 - 조건 기반 추천 로직 구현
@@ -478,12 +482,12 @@ public UserStatsDTO getUserStats(Long userId) {
   - 추천 입력 → 결과 → history 한 페이지 구성
   - 추천 결과를 게시글 작성 폼으로 자동 주입
 
-### 제외 영역
+### 8-4. 제외 영역
 - 로그인/회원가입 Security 설정 및 인증 처리 부분은 담당하지 않음
 
 ---
 
-## 회고
+## 9. 회고
 
 이 프로젝트를 통해  
 “기능을 만드는 것”과 “데이터 구조를 설계하는 것”은 완전히 다르다는 걸 배웠습니다.
