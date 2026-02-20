@@ -43,7 +43,6 @@ toc: false
   inset:0;
   z-index:3;
   border-radius:16px;
-  /* 접근성: 포커스 표시를 위해 기본 outline은 유지하고 싶으면 아래 제거 */
   outline:none;
 }
 
@@ -104,6 +103,20 @@ toc: false
   display:flex;
   flex-direction:column;
   gap:8px;
+}
+
+/* ✅ Tag (분야 뱃지) - projects.md와 동일 톤 */
+.project-tag{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-size:0.78rem;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid rgba(0,0,0,0.10);
+  color:#444;
+  background: rgba(0,0,0,0.02);
+  width: fit-content;
 }
 
 /* 제목 */
@@ -192,10 +205,11 @@ toc: false
 
     <div class="project-content">
       <div class="project-thumb-wrap">
-        <img class="project-thumb" src="/assets/img/projects/ynnect/ynnect-thumb.png" alt="YNNECT thumbnail">
+        <img class="project-thumb" src="/assets/img/projects/ynnect/ynnect-thumb.jpg" alt="YNNECT thumbnail">
       </div>
 
       <div class="project-body">
+        <div class="project-tag">Backend · Spring Boot</div>
         <h3 class="project-title">🔹 YNNECT</h3>
         <p class="project-desc">위치 · 상태 · 시간표를 공유하는 캠퍼스 기반 소셜 플랫폼</p>
       </div>
@@ -210,10 +224,11 @@ toc: false
 
     <div class="project-content">
       <div class="project-thumb-wrap">
-        <img class="project-thumb" src="/assets/img/projects/aplusmaker/aplusmaker-thumb.png" alt="AplusMaker thumbnail">
+        <img class="project-thumb" src="/assets/img/projects/aplusmaker/aplusmaker-thumb.jpg" alt="AplusMaker thumbnail">
       </div>
 
       <div class="project-body">
+        <div class="project-tag">Backend · Spring</div>
         <h3 class="project-title">🔹 AplusMaker</h3>
         <p class="project-desc">조건 기반 문제 추천 + 커뮤니티를 결합한 학습 플랫폼</p>
       </div>
@@ -228,10 +243,11 @@ toc: false
 
     <div class="project-content">
       <div class="project-thumb-wrap">
-        <img class="project-thumb" src="/assets/img/projects/robot/robot-thumb.png" alt="Robot Monitoring thumbnail">
+        <img class="project-thumb" src="/assets/img/projects/robot/robot-thumb.jpg" alt="Robot Monitoring thumbnail">
       </div>
 
       <div class="project-body">
+        <div class="project-tag">Backend · NestJS</div>
         <h3 class="project-title">🔹 Robot Monitoring System</h3>
         <p class="project-desc">로봇 실시간 관제 및 Telemetry 수집 시스템</p>
       </div>
@@ -255,7 +271,7 @@ toc: false
 
       <div class="project-content">
         <div class="project-thumb-wrap">
-          <img class="project-thumb" src="/assets/img/projects/robotics/robotics-thumb.png" alt="Robotics thumbnail">
+          <img class="project-thumb" src="/assets/img/projects/robotics/robotics-thumb.jpg" alt="Robotics thumbnail">
         </div>
 
         <div class="project-body">
@@ -269,7 +285,6 @@ toc: false
     </div>
 
   </div>
-
 </div>
 
 <script>
