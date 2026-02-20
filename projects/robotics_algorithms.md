@@ -48,12 +48,13 @@ image: /assets/img/projects/robotics/robotics-thumb.jpg
 .custom-toc ul ul { display: none; }
 
 .page__content,
-.page-content {
+.page-content,
+.page__inner-wrap,
+.page__inner-wrap .page__content {
   line-height: 1.9;
   font-size: 1.05rem;
   max-width: 780px;
 }
-
 .page__content h2,
 .page-content h2 {
   font-size: 1.85rem;
