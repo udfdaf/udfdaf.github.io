@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: YNNECT
 permalink: /projects/ynnect/
 image: /assets/img/projects/ynnect/ynnect-thumb.png
