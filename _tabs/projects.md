@@ -188,7 +188,7 @@ order: 2
   <div class="project-card">
     <a class="project-link" href="/projects/robotics/" aria-label="Robotics Algorithms 프로젝트로 이동"></a>
     <div class="project-thumb">
-      <img src="/assets/img/projects/robotics/robotics-thumb.png" alt="Robotics thumbnail">
+      <img src="/assets/img/projects/robotics/robotics-thumb.jpg" alt="Robotics thumbnail">
     </div>
     <div class="project-body">
       <div class="project-tag">Robotics · Algorithms</div>
